@@ -1,0 +1,6 @@
+print("Enter two numbers.")
+a = input()
+b = input()
+print("The concatenation of is "+str(a)+str(b))
+sum = int(a)+ int(b)
+print("The sum is ",sum)
