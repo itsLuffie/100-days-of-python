@@ -10,10 +10,11 @@
 # greet()
 
 
-def greet_with_name(name):
-    print(f"Hello {name}")
-    print("Welcome to day 8")
+def greet_with_name(name, location, college):
+    print(f"Hello my name is {name}.")
+    print(f"I am from {location}.")
+    print(f"I study at {college}.")
     
 
 
-greet_with_name("Pawan")
+greet_with_name(name="Pawan",college = "cct", location= "Bhairahawa")
