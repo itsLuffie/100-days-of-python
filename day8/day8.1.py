@@ -18,3 +18,4 @@ def greet_with_name(name, location, college):
 
 
 greet_with_name(name="Pawan",college = "cct", location= "Bhairahawa")
+# positional argument refers to directly assigned value in the same locaiton
