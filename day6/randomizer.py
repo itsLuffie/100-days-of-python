@@ -15,10 +15,10 @@ def randomizer():
             
             add += word
             print(f"Your name is {add}")
-            time.sleep(1/50)        
+            time.sleep(1/60)        
         else:
             
             print(f"Your name is {add}{word}")
-            time.sleep(1/50)
+            time.sleep(1/60)
 
 randomizer()
