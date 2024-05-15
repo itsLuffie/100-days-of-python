@@ -50,5 +50,4 @@ def calculator():
             os.system('clear')
             calculator()
             
-            
 calculator()
