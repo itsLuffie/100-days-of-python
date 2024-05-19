@@ -22,5 +22,15 @@ def randomizer():
             os.system('clear')
             print(f"Your name is {add}{word}")
             time.sleep(1/80)        
-
+def line():
+    i = 0
+    dash = ""
+    while i < 20:
+        i += 1
+        dash += "_"
+        print (f"Guessing your name: {dash}")
+        time.sleep(1/10)
+        os.system('clear')
+    
+line()
 randomizer()
