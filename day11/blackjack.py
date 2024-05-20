@@ -1,7 +1,7 @@
 
 import random
 import os
-from art import logo
+from day14.art import logo
 
 def deal_card():
   """Returns a random card from the deck."""

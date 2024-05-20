@@ -1,5 +1,5 @@
 import os
-from art import logo
+from day14.art import logo
 
 #Calculator
 

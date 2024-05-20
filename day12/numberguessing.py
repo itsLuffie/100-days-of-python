@@ -1,5 +1,5 @@
 import random
-import art
+import day14.art as art
 EASY_LEVEL_TURNS = 10
 HARD_LEVEL_TURNS = 5
 is_game_end = False
