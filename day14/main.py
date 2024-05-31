@@ -1,40 +1,52 @@
-from game_data import data
 from art import logo, vs
-import random
+from game_data import data
+import random 
+from os import system
 
+def format_data(account):
+    account_name = account["name"]
+    account_descr = account["description"]
+    account_country = account["country"]
+    return f"{account_name}, a {account_descr}, from {account_country}"
 
-
+def check_answer(guess, a_followers, b_follwers):
+    if a_followers > b_follwers:
+        return guess == "a"
+    else:
+        return guess == "b"
+    
+    
 print (logo)
-
-
-current_choice = random.choice(data)
-next_choice = random.choice(data)
-initial_popularity = current_choice['follower_count']
-comparision_popularity = next_choice['follower_count']
 score = 0
-is_game_end = False
-print (f"Compare A:{current_choice['name']}, a {current_choice['description']}, from {current_choice['country']}")
+game_should_continue = True
+account_b = random.choice(data)
+
+while game_should_continue:
+    account_a = account_b
+    account_b = random.choice(data)
+
+    while account_a == account_b:
+        account_b = random.choice(data)
+        
+        
+        
+    print(f"Compare A: {format_data(account_a)}")
+    print(vs)
+    print(f"Compare B: {format_data(account_b)}")
+
+    guess = input("Who has more followers? Type 'A' or 'B': ").lower
+
+    a_follower_count = account_a["follower_count"]
+    b_follower_count = account_b["follower_count"]
 
 
-print(vs)
-
-
-print(f"Against B:{next_choice['name']}, a {next_choice['description']}, from {next_choice['country']}")
-print(f"Follower Count = {current_choice['follower_count']}")
-print(f"Follower Count = {next_choice['follower_count']}")
-
-
-user_choice = input("Who has more followers? Type 'A' or 'B': ").upper
-if user_choice == 'A':
-    if initial_popularity > comparision_popularity:
+    is_correct = check_answer(guess, a_follower_count, b_follower_count)
+    
+    system('clear')
+    print(logo)
+    if is_correct:
         score += 1
-        print(f"You're right! Current score: {score}")
+        print(f"You're right! Current score: {score}.")
     else:
-        is_game_end = True
-        return f"Sorry, that's wrong. Final score: {score}"
-elif user_choice == 'B':
-    if initial_popularity < comparision_popularity:
-        score += 1
-        print(f"You're right! Current score: {score}")
-    else:
-        return f"Sorry, that's wrong. Final score: {score}"
+        game_should_continue = False
+        print(f"Sorry! that's wrong. Final score: {score}")
