@@ -48,6 +48,7 @@ def process_coins():
     total += int(input("how many quarters?: ")) * 0.1
     total += int(input("how many quarters?: ")) * 0.05
     total += int(input("how many quarters?: ")) * 0.01
+    return total
 
 
 def is_transaction_successful(money_received, drink_cost):
@@ -64,7 +65,7 @@ def is_transaction_successful(money_received, drink_cost):
 
 
 is_on = True
-while True:
+while is_on:
     choice = input("What would you like? (espresso/latte/cappuccino): ")
     if choice == "off":
         is_on = False
