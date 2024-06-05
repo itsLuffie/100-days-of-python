@@ -1,4 +1,4 @@
-from turtle import Turtle, Screen, shape
+from turtle import Turtle, Screen
 
 timmy = Turtle()
 print(timmy)
